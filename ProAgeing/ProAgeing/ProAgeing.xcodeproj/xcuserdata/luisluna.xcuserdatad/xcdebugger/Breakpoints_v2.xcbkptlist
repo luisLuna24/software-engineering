@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProAgeing/Inicio/UserDetailsTableViewController.swift"
+            timestampString = "532739140.974243"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "updateUser(campo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__ObjC.UIAlertAction) -&gt; () in ProAgeing.UserDetailsTableViewController.updateUser(campo: Swift.Int) -&gt; ()"
+                  moduleName = "ProAgeing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisluna/Google%20Drive/Universidad/Ing%20Software/Ageing/ProAgeing/ProAgeing/Inicio/UserDetailsTableViewController.swift"
+                  timestampString = "532732430.262861"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "2424">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__ObjC.UIAlertAction) -&gt; () in ProAgeing.UserDetailsTableViewController.updateUser(campo: Swift.Int) -&gt; ()"
+                  moduleName = "ProAgeing"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisluna/Google%20Drive/Universidad/Ing%20Software/Ageing/ProAgeing/ProAgeing/Inicio/UserDetailsTableViewController.swift"
+                  timestampString = "532732430.270255"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "3561">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProAgeing/Model/Usuario.swift"
+            timestampString = "532890040.92002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "updateUser(propiedad:valor:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

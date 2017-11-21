@@ -1,0 +1,165 @@
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "199-7R-Mfv"; */
+"199-7R-Mfv.text" = "Email";
+
+/* Class = "UILabel"; text = "© X-Technologies 2017"; ObjectID = "1TU-4h-rOD"; */
+"1TU-4h-rOD.text" = "© X-Technologies 2017";
+
+/* Class = "UILabel"; text = "Iniciar sesión"; ObjectID = "42m-Tl-Svu"; */
+"42m-Tl-Svu.text" = "Iniciar sesión";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "4Ze-2j-alf"; */
+"4Ze-2j-alf.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "5tG-fz-8P8"; */
+"5tG-fz-8P8.text" = "Title";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "6zU-iT-s3y"; */
+"6zU-iT-s3y.text" = "Subtitle";
+
+/* Class = "UINavigationItem"; title = "Contactos"; ObjectID = "8ZB-R5-FwF"; */
+"8ZB-R5-FwF.title" = "Contactos";
+
+/* Class = "UITabBarItem"; title = "Extra"; ObjectID = "AEI-ch-KPu"; */
+"AEI-ch-KPu.title" = "Extra";
+
+/* Class = "UIBarButtonItem"; title = "Iniciar Sesión"; ObjectID = "CeS-bc-cwF"; */
+"CeS-bc-cwF.title" = "Iniciar Sesión";
+
+/* Class = "UIButton"; normalTitle = "Entrar"; ObjectID = "DwT-Gp-QY7"; */
+"DwT-Gp-QY7.normalTitle" = "Entrar";
+
+/* Class = "UILabel"; text = "Numero"; ObjectID = "Ikj-NT-0NW"; */
+"Ikj-NT-0NW.text" = "Numero";
+
+/* Class = "UILabel"; text = "Nombre"; ObjectID = "Iml-8z-54u"; */
+"Iml-8z-54u.text" = "Nombre";
+
+/* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "JXB-ko-jlW"; */
+"JXB-ko-jlW.title" = "Cancelar";
+
+/* Class = "UINavigationItem"; title = "Medicamentos"; ObjectID = "Kai-fN-sy3"; */
+"Kai-fN-sy3.title" = "Medicamentos";
+
+/* Class = "UILabel"; text = "Numero"; ObjectID = "LiT-he-Baq"; */
+"LiT-he-Baq.text" = "Numero";
+
+/* Class = "UINavigationItem"; title = "Agregar Medicamento"; ObjectID = "OOG-MN-NLu"; */
+"OOG-MN-NLu.title" = "Agregar Medicamento";
+
+/* Class = "UITabBarItem"; title = "Medicamentos"; ObjectID = "R2G-pU-WUM"; */
+"R2G-pU-WUM.title" = "Medicamentos";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "R5v-II-0vi"; */
+"R5v-II-0vi.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Todos los Contactos"; ObjectID = "RuL-VT-5k7"; */
+"RuL-VT-5k7.title" = "Todos los Contactos";
+
+/* Class = "UINavigationItem"; title = "Registro"; ObjectID = "Ruw-Qb-y90"; */
+"Ruw-Qb-y90.title" = "Registro";
+
+/* Class = "UILabel"; text = "❤️ Es Favorito ❤️"; ObjectID = "SXP-FI-Al0"; */
+"SXP-FI-Al0.text" = "❤️ Es Favorito ❤️";
+
+/* Class = "UILabel"; text = "Nombre"; ObjectID = "SiP-bx-MHF"; */
+"SiP-bx-MHF.text" = "Nombre";
+
+/* Class = "UISearchBar"; placeholder = "Busqueda por nombre"; ObjectID = "T3c-BG-IKd"; */
+"T3c-BG-IKd.placeholder" = "Busqueda por nombre";
+
+/* Class = "UISearchBar"; T3c-BG-IKd.scopeButtonTitles[0] = "Title"; ObjectID = "T3c-BG-IKd"; */
+"T3c-BG-IKd.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; T3c-BG-IKd.scopeButtonTitles[1] = "Title"; ObjectID = "T3c-BG-IKd"; */
+"T3c-BG-IKd.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "TR4-2I-Pyw"; */
+"TR4-2I-Pyw.text" = "Email";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "UFH-m3-XUO"; */
+"UFH-m3-XUO.text" = "Title";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "UW1-LR-sSc"; */
+"UW1-LR-sSc.text" = "Subtitle";
+
+/* Class = "UITabBarItem"; title = "Recordatorios"; ObjectID = "VH1-FF-vWY"; */
+"VH1-FF-vWY.title" = "Recordatorios";
+
+/* Class = "UILabel"; text = "Nombre"; ObjectID = "WGW-d3-xIm"; */
+"WGW-d3-xIm.text" = "Nombre";
+
+/* Class = "UINavigationItem"; title = "Extra"; ObjectID = "Wny-j2-Lui"; */
+"Wny-j2-Lui.title" = "Extra";
+
+/* Class = "UITabBarItem"; title = "Inicio"; ObjectID = "WwF-3O-2fx"; */
+"WwF-3O-2fx.title" = "Inicio";
+
+/* Class = "UIButton"; normalTitle = "Olvidé mi contraseña"; ObjectID = "XLc-Rs-9pu"; */
+"XLc-Rs-9pu.normalTitle" = "Olvidé mi contraseña";
+
+/* Class = "UITabBarItem"; title = "Contactos"; ObjectID = "XVQ-ja-OsS"; */
+"XVQ-ja-OsS.title" = "Contactos";
+
+/* Class = "UINavigationItem"; title = "Detalles"; ObjectID = "Yth-5o-Lur"; */
+"Yth-5o-Lur.title" = "Detalles";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "Z1U-Pr-8Kk"; */
+"Z1U-Pr-8Kk.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Nombre Medicamento"; ObjectID = "ZBU-n7-BQz"; */
+"ZBU-n7-BQz.text" = "Nombre Medicamento";
+
+/* Class = "UIButton"; normalTitle = "Registrarse"; ObjectID = "aPF-P7-y2x"; */
+"aPF-P7-y2x.normalTitle" = "Registrarse";
+
+/* Class = "UINavigationItem"; title = "Favoritos"; ObjectID = "dUS-63-oMy"; */
+"dUS-63-oMy.title" = "Favoritos";
+
+/* Class = "UILabel"; text = "Dosis, Unidad"; ObjectID = "f2W-1D-2an"; */
+"f2W-1D-2an.text" = "Dosis, Unidad";
+
+/* Class = "UILabel"; text = "Teléfono"; ObjectID = "fc4-Gv-9jq"; */
+"fc4-Gv-9jq.text" = "Teléfono";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "gB6-U1-dzZ"; */
+"gB6-U1-dzZ.text" = "Email";
+
+/* Class = "UINavigationItem"; title = "Inicio"; ObjectID = "iMg-hg-B2H"; */
+"iMg-hg-B2H.title" = "Inicio";
+
+/* Class = "UISearchBar"; placeholder = "Busqueda por nombre"; ObjectID = "me1-ut-jYJ"; */
+"me1-ut-jYJ.placeholder" = "Busqueda por nombre";
+
+/* Class = "UISearchBar"; me1-ut-jYJ.scopeButtonTitles[0] = "Title"; ObjectID = "me1-ut-jYJ"; */
+"me1-ut-jYJ.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; me1-ut-jYJ.scopeButtonTitles[1] = "Title"; ObjectID = "me1-ut-jYJ"; */
+"me1-ut-jYJ.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "mfw-mF-ZJs"; */
+"mfw-mF-ZJs.text" = "Title";
+
+/* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "nDr-0C-z2l"; */
+"nDr-0C-z2l.title" = "Cancelar";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "qaE-b5-hcG"; */
+"qaE-b5-hcG.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "qr5-hm-5YX"; */
+"qr5-hm-5YX.text" = "Email";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "reF-dD-aZG"; */
+"reF-dD-aZG.text" = "Title";
+
+/* Class = "UILabel"; text = "Contraseña"; ObjectID = "rhr-gl-Hjs"; */
+"rhr-gl-Hjs.text" = "Contraseña";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "vyd-jd-1XC"; */
+"vyd-jd-1XC.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "wwD-ns-tDt"; */
+"wwD-ns-tDt.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Recordatorios"; ObjectID = "y1l-Lr-sqy"; */
+"y1l-Lr-sqy.title" = "Recordatorios";
