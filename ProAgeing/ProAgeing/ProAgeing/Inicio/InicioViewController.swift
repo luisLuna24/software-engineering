@@ -92,6 +92,7 @@ class InicioViewController: UITableViewController {
             
             cell.textLabel?.text = data.other[0].title
             cell.detailTextLabel?.text = data.other[0].detail
+            cell.detailTextLabel?.numberOfLines = 3
             cell.textLabel?.numberOfLines = 1
             //cell.imageView?.image = appDelegate.usuario.imagen
             //cell.detailTextLabel?.font = UIFont(name: "Avenir", size: CGFloat(18))
@@ -163,10 +164,16 @@ class InicioViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             performSegue(withIdentifier: "showDetail", sender: self)
-       /* case 1:
-            performSegue(withIdentifier: "saludSeg", sender: self)
+        case 1:
+            self.showRate(rate: self.appDelegate.usuario.getLastHearthRate())
+            //self.tableView.reloadData()
+            self.viewDidLoad()
+            
         case 2:
-            performSegue(withIdentifier: "recordatoriosSeg", sender: self)*/
+            self.tabBarController?.selectedIndex = 1
+           // performSegue(withIdentifier: "showReminders", sender: self)
+            
+            
         case 3:
             let seleccion = appDelegate.usuario.getLastCalled()
             var number: String? = seleccion?.phone
@@ -176,7 +183,7 @@ class InicioViewController: UITableViewController {
                 TelefonoViewController.open(scheme: call)
             } else {
                 
-                self.showMessage(text: "Llame a alguien para que aparezca aquí")
+                self.showMessage(text: "Llame a alguien para que aparezca aquí", interval: 2.0)
             }
             
         default:
@@ -192,14 +199,14 @@ class InicioViewController: UITableViewController {
     }
 
     var alertController: UIAlertController!
-    func showMessage(text: String) {
+    func showMessage(text: String, interval: Double) {
         
         alertController = UIAlertController(title: "", message:
             text, preferredStyle: UIAlertControllerStyle.alert)
         
         self.present(alertController, animated: true, completion: nil)
         
-        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AllContactsTableViewController.dismissAlert), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(AllContactsTableViewController.dismissAlert), userInfo: nil, repeats: true)
         
     }
     
@@ -207,6 +214,22 @@ class InicioViewController: UITableViewController {
         // Dismiss the alert from here
         alertController.dismiss(animated: true, completion: nil)
         
+    }
+    
+    func showRate(rate: Double?) {
+        
+        if rate == nil {
+            self.showMessage(text: "Aún no se ha tomado la frecuencia cardiaca", interval: 4.0)
+            return
+            
+        }
+        let title1 = "La última frecuencia registrada es:"
+        
+        let alert = UIAlertController(title: title1, message: String(describing: rate!), preferredStyle: UIAlertControllerStyle.alert)
+        //alert.setValue(NSAttributedString(string: alert.title!, attributes: [NSFontAttributeName : UIFont(name: "Avenir Heavy", size: 22.0), NSForegroundColorAttributeName : UIColor.black]), forKey: "attributedTitle")
+        alert.setValue(NSAttributedString(string: alert.message!, attributes: [NSFontAttributeName : UIFont(name: "Avenir Book", size: 20.0), NSForegroundColorAttributeName : UIColor.black]), forKey: "attributedMessage")
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+         self.present(alert, animated: true, completion: nil)
     }
     
     func requestAccessToCalendar() {
@@ -272,7 +295,7 @@ struct HomeResumes {
     mutating func details () {
         switch (self.action) {
         case .heart:
-            self.detail = "---"
+           detail = "Presione aquí para conocerla"
         case .contact:
             let lastCalled: Contacto? = self.appDelegate.usuario.getLastCalled()
             self.phoneNumber = lastCalled?.phone ?? ""
@@ -285,12 +308,10 @@ struct HomeResumes {
             
             
         case.reminder:
-            self.detail = "Tomar pastilla Hoy 16:30"
+            self.detail = "Toque aquí para ver"
        
         }
     }
-    
-    
     
     
 }

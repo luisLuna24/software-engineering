@@ -2,13 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCalendarsUsageDescription</key>
-	<string>ProAgeing usa esto para poder administrar tus recordatorios de eventos y de medicamentos.</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -22,9 +15,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>tel</string>
@@ -34,14 +27,25 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>ProAgeing usa esto para poder administrar tus recordatorios de eventos y de medicamentos.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>El acceso a sus contactos nos permite hacer más fáciles las funciones de llamada para mantenerte en contacto con ellos fácilmente.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Necesitamos acceso a sus datos de salud para entre otras cosas medir su frecuencia cardiaca.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Necesitamos acceso a sus datos de salud para entre otras cosas medir su frecuencia cardiaca.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Con ello podemos hacer que sus contactos tengan una imagen de manera que los pueda identificar de una mejor manera.</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>ProAgeing usa esto para poder administrar tus recordatorios de eventos y de medicamentos.</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

@@ -40,6 +40,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if WCSession.isSupported() {
             self.connectivityHandler = ConnectivityHandler()
+            
+            guard   let dateOfBirth = HKObjectType.characteristicType(forIdentifier: .dateOfBirth),
+                
+            
+                let bloodType = HKObjectType.characteristicType(forIdentifier: .bloodType),
+                let biologicalSex = HKObjectType.characteristicType(forIdentifier: .biologicalSex),
+                let bodyMassIndex = HKObjectType.quantityType(forIdentifier: .bodyMassIndex),
+                let height = HKObjectType.quantityType(forIdentifier: .height),
+                let bodyMass = HKObjectType.quantityType(forIdentifier: .bodyMass),
+                let heart = HKObjectType.quantityType(forIdentifier: .heartRate),
+                
+                let activeEnergy = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned) else {
+                    return false
+             
+            }
+            
+            let healthKitTypesToWrite: Set<HKSampleType> = [heart,
+                                                            HKObjectType.workoutType()]
+            let healthKitTypesToRead: Set<HKObjectType> = [heart,
+                                                           HKObjectType.workoutType()]
+            
+            HKHealthStore().requestAuthorization(toShare: healthKitTypesToWrite,
+                                                 read: healthKitTypesToRead) { (success, error) in
+                                                    print("Autorización de acceso a salud es: \(success)")
+                                                   // completion(success, error)
+            }
+            
+            
         } else {
             NSLog("WCSession no es soportada en este dispositivo")
         }
@@ -167,6 +195,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let isReachable = flags.contains(.reachable)
         let needsConnection = flags.contains(.connectionRequired)
         return (isReachable && !needsConnection)
+    }
+    
+     func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Swift.Void) {
+        
     }
     
     

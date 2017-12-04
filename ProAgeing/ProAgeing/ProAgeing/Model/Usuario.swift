@@ -51,6 +51,7 @@ class Usuario: NSObject, NSCoding {
         self.sangre = tipoSangre
         self.altura = altura
         self.peso = peso
+       
         
     }
     
@@ -67,7 +68,7 @@ class Usuario: NSObject, NSCoding {
         self.sangre = aDecoder.decodeObject(forKey: "sangre") as! String
         self.altura = aDecoder.decodeObject(forKey: "altura") as! Double
         self.peso = aDecoder.decodeObject(forKey: "peso") as! Double
-        self.heartRate = aDecoder.decodeObject(forKey: "email") as? Array<Double> ?? Array<Double>()
+        self.heartRate = aDecoder.decodeObject(forKey: "heartRate") as? Array<Double> ?? Array<Double>()
         self.lastCalled = aDecoder.decodeObject(forKey: "lastCalled_Con") as? Contacto ?? nil
         self.medicamentos = (aDecoder.decodeObject(forKey: "medicamentos") as? Array<Medicamento>)!
         
@@ -186,8 +187,6 @@ class Usuario: NSObject, NSCoding {
     func updateUser(propiedad: String, valor: String) -> Bool {
 
         switch (propiedad) {
-        case "Nombre":
-            self.nombre = valor
         case "Email":
             self.email = valor
         case "Contraseña":
@@ -203,5 +202,23 @@ class Usuario: NSObject, NSCoding {
         return true
         
     }
+    
+    func addHearthRate(rate: Double) throws {
+        self.heartRate.append(rate)
+    }
+    func getLastHearthRate () -> Double? {
+        
+        print("Getting last hearth rate")
+        if self.heartRate.isEmpty {
+            return nil
+        }
+        let pos = self.heartRate.count - 1
+        let hr = self.heartRate.popLast()
+        self.heartRate.insert(hr!, at: pos)
+        return hr
+        
+    }
+    
+
  
 }

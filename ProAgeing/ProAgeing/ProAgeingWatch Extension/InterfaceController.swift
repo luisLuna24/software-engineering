@@ -73,7 +73,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate, WCSe
     }
     
     func displayNotAllowed() {
-        label.setText("No Permitido")
+        label.setText("No Permitido, abre ProAgeing en tu iPhone y permite el acceso salud.")
     }
     
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {

@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Alamofire
-import UserNotifications
 import EventKit
 
 
@@ -30,7 +29,7 @@ class Medicamento: NSObject, NSCoding {
     let viaAdmon: String
     private var alreadyInDB = false
     
-    var notificationTrigguer: UNTimeIntervalNotificationTrigger?
+    //var notificationTrigguer: UNTimeIntervalNotificationTrigger?
     
  
     
@@ -101,8 +100,8 @@ class Medicamento: NSObject, NSCoding {
         
         print("Parameters before request: \(parameters)")
         
-        Alamofire.request(NuevoMedicamentoFormViewController.api, method: .post, parameters: parameters, encoding:  URLEncoding.httpBody, headers: headers).responseJSON { (response:DataResponse<Any>) in
-            
+        Alamofire.request(NuevoMedicamentoFormViewController.api, method: .post , parameters: parameters, encoding:  JSONEncoding.default, headers: headers).responseJSON { (response:DataResponse<Any>) in
+ 
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
             
@@ -154,12 +153,6 @@ class Medicamento: NSObject, NSCoding {
             }
         }
         
-      //  if eventStore.calendar(withIdentifier: "ProAgeing") == nil {
-     
-        
-   
-            
-      //  }
         
         let newReminder = EKReminder(eventStore: eventStore)
         
@@ -168,7 +161,6 @@ class Medicamento: NSObject, NSCoding {
         //newReminder.startDateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: self.desde!)
         newReminder.dueDateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: self.hasta!)
         var alarm = EKAlarm(absoluteDate: self.desde!)
-        //newReminder.recurrenceRules =
     
         newReminder.addAlarm(alarm)
         newReminder.recurrenceRules = [getRecurring()]

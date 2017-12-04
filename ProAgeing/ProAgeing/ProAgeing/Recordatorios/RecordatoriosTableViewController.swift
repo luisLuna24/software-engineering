@@ -22,6 +22,8 @@ class RecordatoriosTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         let status = EKEventStore.authorizationStatus(for: EKEntityType.reminder)
         
         switch (status) {
@@ -98,12 +100,19 @@ class RecordatoriosTableViewController: UITableViewController {
         
         let title = reminders [indexPath.row].title
         
+        var dueStr = ""
+        if reminders[indexPath.row].dueDateComponents != nil {
+            dueStr = formatter.string(from: (reminders[indexPath.row].dueDateComponents?.date!)!)
+            
+        }
+        var detail = ""
+        if reminders[indexPath.row].notes != nil {
+            detail = dueStr + " " + reminders[indexPath.row].notes!
+        }
         
-        
-        let dueStr = formatter.string(from: (reminders[indexPath.row].dueDateComponents?.date!)!)
-        
-        let detail = dueStr + " " + reminders[indexPath.row].notes!
-        
+        if detail == "" {
+            detail = "Sin detalles"
+        }
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = detail
         cell.detailTextLabel?.numberOfLines = 3
@@ -152,7 +161,7 @@ class RecordatoriosTableViewController: UITableViewController {
 
     
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+   /* override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
            // eventStore.delet
@@ -161,7 +170,7 @@ class RecordatoriosTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
+    */
 
     /*
     // Override to support rearranging the table view.
@@ -218,12 +227,13 @@ class RecordatoriosTableViewController: UITableViewController {
         let predicado = eventStore.predicateForReminders(in: [proCal!])
         eventStore.fetchReminders(matching: predicado) { reminders in
             self.reminders.removeAll()
-            for reminder in reminders! {
+            self.reminders = reminders!
+            /*for reminder in reminders! {
                 
                 self.reminders.append(reminder)
                 print("Reminder: \(reminder)")
                 
-            }
+            }*/
             }
             
         
@@ -276,6 +286,11 @@ class RecordatoriosTableViewController: UITableViewController {
         
         
         
+    }
+    
+    
+    @IBAction func reloadPressed(_ sender: Any) {
+        self.tableView.reloadData()
     }
     
     func requestAccessToCalendar() {

@@ -141,6 +141,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         
        let dicUser = response.arrayValue
+       
             
         print("Array Value: \(dicUser)")
         for (key, value) in response.dictionary! {
@@ -189,7 +190,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 print("Im on imagen and is: \(imagen)")
             case "Nombre":
                 nombre = String(describing: value)
-                print("Im on nombre and is: \(nombre)")
+                var a = nombre.utf16
+                print("Im on nombre and is: \(String(describing: a))")
             case "loginError":
                 loginError = Bool(String(describing: value))
                 print("Im on loginError and is: \(loginError!)")
@@ -213,13 +215,50 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let user = Usuario(id: id, email: email, pass: contrasena, padecimientos: padecimientos, name: nombre, fNacimiento: nacimiento, sex: sexo, image: imagen, medicamento: medicamento, tipoSangre: sangre, altura: altura, peso: peso)
         
         appDelegate.usuario = user
+        getMeds()
         appDelegate.saveUserInDefaults()
+        
         performSegue(withIdentifier: "loginSegue", sender: self)
         
             
 
         
                 
+    }
+    
+    private func getMeds () {
+        let apiMed = "http://xtechmx.tk/Proageing/API/getMeds.php?" + String(self.appDelegate.usuario.id)
+        
+        let jsonData: NSData! =  NSData(contentsOf: NSURL(string: apiMed)! as URL)
+        if (jsonData == nil) {
+            showMessage(text: "Lo sentimos 😥 hubo un problema al obtener tus medicamentos. Estamos trabajando para resolverlo pronto.")
+            return
+        }
+        let response: JSON! = try! JSON(data: jsonData as Data)
+        
+        
+        print("RESPONSE FOR MEDS IS NULL \(response == JSON.null)")
+        if(response == JSON.null) {
+            
+            self.showMessage(text: "Error desconocido")
+            return
+        }
+        
+        let dicUser = response.arrayValue
+        
+        
+        print("Array MED Value: \(response)")
+        for (key, value) in response.dictionary! {
+            
+          /*  switch key {
+                case ""
+                
+                
+                
+            }*/
+        
+        
+        }
     }
     
     func showMessage(text: String) {

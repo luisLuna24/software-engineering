@@ -21,7 +21,6 @@
         </array>
         <array key="AvenirNext.ttc">
             <string>AvenirNext-Medium</string>
-            <string>AvenirNext-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -65,11 +64,40 @@
                             <outlet property="delegate" destination="ye0-it-Mtq" id="p7B-iE-U67"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recordatorios" id="y1l-Lr-sqy"/>
+                    <navigationItem key="navigationItem" title="Recordatorios" id="y1l-Lr-sqy">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="peL-to-diW">
+                            <connections>
+                                <action selector="reloadPressed:" destination="ye0-it-Mtq" id="M1n-wn-PnF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1ZZ-3L-h2i">
+                            <connections>
+                                <segue destination="ou5-yh-K5a" kind="presentation" id="5O6-n4-q3i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzG-hM-jm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="105" y="426"/>
+        </scene>
+        <!--Nuevo Recordatorio View Controller-->
+        <scene sceneID="Csm-Lj-EXj">
+            <objects>
+                <viewController id="ou5-yh-K5a" customClass="NuevoRecordatorioViewController" customModule="ProAgeing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WDi-Xl-bcW"/>
+                        <viewControllerLayoutGuide type="bottom" id="YSw-9v-ujK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qos-mM-GeY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hq1-j0-4Ii" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1351" y="431"/>
         </scene>
         <!--Recordatorios-->
         <scene sceneID="tOb-Lo-OmP">
@@ -77,6 +105,7 @@
                 <navigationController id="ENE-Ew-Dw2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Recordatorios" image="reminder" id="VH1-FF-vWY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3iW-VN-75R">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -156,14 +185,6 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLc-Rs-9pu">
-                                <rect key="frame" x="66" y="515" width="233" height="45"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
-                                <state key="normal" title="Olvidé mi contraseña">
-                                    <color key="titleColor" red="0.23590049147605896" green="0.49369931221008301" blue="0.96475404500961304" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© X-Technologies 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TU-4h-rOD">
                                 <rect key="frame" x="75" y="592" width="230" height="31"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
@@ -221,7 +242,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DwT-Gp-QY7" firstAttribute="top" secondItem="XeA-2R-atq" secondAttribute="bottom" constant="20" id="23C-Fa-6oe"/>
-                            <constraint firstItem="XLc-Rs-9pu" firstAttribute="leading" secondItem="5yC-lf-VbV" secondAttribute="leadingMargin" constant="50" id="2Py-pS-bJY"/>
                             <constraint firstItem="DwT-Gp-QY7" firstAttribute="centerX" secondItem="aPF-P7-y2x" secondAttribute="centerX" id="3ze-7C-QZj"/>
                             <constraint firstItem="aPF-P7-y2x" firstAttribute="leading" secondItem="5yC-lf-VbV" secondAttribute="leadingMargin" constant="84" id="5Ot-hH-hB3"/>
                             <constraint firstItem="Uqk-ow-svM" firstAttribute="top" secondItem="M8o-j2-wbA" secondAttribute="bottom" constant="149" id="CNG-sN-FGf"/>
@@ -234,7 +254,6 @@
                             <constraint firstItem="TwB-Jr-ver" firstAttribute="top" secondItem="1TU-4h-rOD" secondAttribute="bottom" constant="44" id="OVB-z0-UeW"/>
                             <constraint firstItem="1TU-4h-rOD" firstAttribute="leading" secondItem="5yC-lf-VbV" secondAttribute="leadingMargin" constant="59" id="Owl-9g-gKx"/>
                             <constraint firstItem="Uqk-ow-svM" firstAttribute="top" secondItem="3Wr-Su-odt" secondAttribute="top" id="ScA-ll-04f"/>
-                            <constraint firstItem="XLc-Rs-9pu" firstAttribute="top" secondItem="aPF-P7-y2x" secondAttribute="bottom" constant="13" id="UDE-Bi-6xl"/>
                             <constraint firstItem="3Wr-Su-odt" firstAttribute="top" secondItem="DlF-WD-Bit" secondAttribute="bottom" constant="44" id="UeR-5P-qvm"/>
                             <constraint firstItem="edN-rW-rfT" firstAttribute="bottom" secondItem="XeA-2R-atq" secondAttribute="bottom" id="Uxx-3F-vk8"/>
                             <constraint firstItem="aPF-P7-y2x" firstAttribute="top" secondItem="DwT-Gp-QY7" secondAttribute="bottom" constant="8" symbolic="YES" id="WO2-n8-tp0"/>
@@ -520,24 +539,24 @@
                                     <segue destination="jfA-JJ-k9M" kind="show" identifier="showDetail" trigger="accessoryAction" id="FTQ-gN-QRN"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="21" reuseIdentifier="heartCell" textLabel="R5v-II-0vi" detailTextLabel="vyd-jd-1XC" style="IBUITableViewCellStyleValue1" id="p8y-zd-LOU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="21" reuseIdentifier="heartCell" textLabel="R5v-II-0vi" detailTextLabel="vyd-jd-1XC" style="IBUITableViewCellStyleSubtitle" id="p8y-zd-LOU">
                                 <rect key="frame" x="0.0" y="118" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p8y-zd-LOU" id="QsS-Bl-25T">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R5v-II-0vi">
-                                            <rect key="frame" x="16" y="8" width="41.5" height="27.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R5v-II-0vi">
+                                            <rect key="frame" x="16" y="-9" width="49.5" height="33"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vyd-jd-1XC">
-                                            <rect key="frame" x="290.5" y="8" width="68.5" height="27.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vyd-jd-1XC">
+                                            <rect key="frame" x="16" y="24" width="72" height="29"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -552,14 +571,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5tG-fz-8P8">
-                                            <rect key="frame" x="16" y="-6" width="41.5" height="27.5"/>
+                                            <rect key="frame" x="16" y="-8" width="45.5" height="30.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qaE-b5-hcG">
-                                            <rect key="frame" x="16" y="21.5" width="72" height="29"/>
+                                            <rect key="frame" x="16" y="22.5" width="72" height="29"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                             <nil key="textColor"/>
@@ -575,6 +594,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Inicio" largeTitleDisplayMode="always" id="iMg-hg-B2H"/>
+                    <connections>
+                        <segue destination="ENE-Ew-Dw2" kind="presentation" identifier="showReminders" id="8ZU-3B-ntN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0F-Le-slv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1114,6 +1136,7 @@
         <image name="reminder" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wAY-k6-3rV"/>
+        <segue reference="xiZ-Jt-lo9"/>
+        <segue reference="8ZU-3B-ntN"/>
     </inferredMetricsTieBreakers>
 </document>

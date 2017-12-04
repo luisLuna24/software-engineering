@@ -1,3 +1,5 @@
+
+
 //
 //  RegistroFormController.swift
 //  ProAgeing
@@ -15,7 +17,7 @@ import Alamofire
 
 class RegistroFormController: FormViewController {
     
-
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var id = Int()
     var nombre: String! = ""
@@ -32,18 +34,18 @@ class RegistroFormController: FormViewController {
     
     //static let api: String = "http://localhost/xtechmx.tk/Proageing/API/register.php" //PRUEBA
     static let api = "http://xtechmx.tk/Proageing/API/register.php"  //FUNCIONAL
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationController?.navigationBar.barTintColor = UIColor.blue
-      
+        
         //self.initialize()
         form
             +++ Section()
             
-       
-        
+            
+            
             <<< NameRow() {
                 $0.title = "Nombre"
                 $0.placeholder = "Juan Pérez Pérez"
@@ -79,8 +81,8 @@ class RegistroFormController: FormViewController {
             }
             
             
-        
-        +++ Section()
+            
+            +++ Section()
             <<< PasswordRow () {
                 $0.title = "Contraseña"
                 $0.placeholder = "*******"
@@ -106,12 +108,12 @@ class RegistroFormController: FormViewController {
                         print("diferente")
                     }
                     
-                   
+                    
                 }
-              
+                
             }
             
-        +++ Section()
+            +++ Section()
             <<< AlertRow<String>() {
                 $0.title = "Tipo de Sangre"
                 $0.options = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"]
@@ -129,8 +131,8 @@ class RegistroFormController: FormViewController {
             }
             
             <<< IntRow() {
-               $0.title = "Peso"
-               $0.placeholder = "KG"
+                $0.title = "Peso"
+                $0.placeholder = "KG"
                 $0.add(rule: RuleRequired())
                 $0.validationOptions = .validatesOnChange
                 $0.onChange({ row in
@@ -164,10 +166,10 @@ class RegistroFormController: FormViewController {
                 
                 
             }
-
-
-        
-        +++ Section()
+            
+            
+            
+            +++ Section()
             <<< DateRow() {
                 $0.title = "Fecha de Nacimiento"
                 $0.add(rule: RuleRequired())
@@ -198,13 +200,13 @@ class RegistroFormController: FormViewController {
                     }
                 }
                 
-            }
-            
+        }
+        
         form +++
             MultivaluedSection(multivaluedOptions: [.Insert, .Delete],
                                header: "Enfermedades Degenerativas",
                                footer: "Puede agregar tantos padecimientos como sea necesario") {
-                
+                                
                                 
                                 $0.addButtonProvider = { section in
                                     return ButtonRow(){
@@ -213,9 +215,9 @@ class RegistroFormController: FormViewController {
                                         
                                     }
                                 }
-
+                                
                                 $0.multivaluedRowToInsertAt = { index in
-                                   
+                                    
                                     AlertRow<String>() {
                                         $0.title = "Nombre del Padecimiento:"
                                         $0.options = ["Diebetes", "Hipertensión Arterial", "Artritis", "Osteoporosis", "Alz-Heimer", "Parkinson", "Demencia", "Sordera"]
@@ -225,42 +227,10 @@ class RegistroFormController: FormViewController {
                                         })
                                         
                                     }
-                               
+                                    
                                 }
                                 
                                 print("FORMMMMM >>>>>>>>>> \(form.values())")
-                                
-                              /*  $0 <<< NameRow() {
-                                    $0.title = "Enferdddd"
-                                
-                                }*/
-                                
-                                
-            }
-            
-       /* form +++
-            MultivaluedSection(multivaluedOptions: [.Insert, .Delete],
-                               header: "Medicamentos",
-                               footer: "Puede agregar tantos medicamentos como sea necesario") {
-                                
-                                
-                                $0.addButtonProvider = { section in
-                                    return ButtonRow(){
-                                        $0.title = "Agregar Medicamento"
-                                    }
-                                }
-                                
-                                
-                                
-                                
-                                $0.multivaluedRowToInsertAt = { index in
-                                    
-                                 
-                                    return NameRow() {
-                                        $0.placeholder = "Nombre"
-                                    }
-                                    
-                                }
                                 
                                 /*  $0 <<< NameRow() {
                                  $0.title = "Enferdddd"
@@ -268,22 +238,55 @@ class RegistroFormController: FormViewController {
                                  }*/
                                 
                                 
-            }*/
+            }
             
-        
-        +++ Section()
+            /* form +++
+             MultivaluedSection(multivaluedOptions: [.Insert, .Delete],
+             header: "Medicamentos",
+             footer: "Puede agregar tantos medicamentos como sea necesario") {
+             
+             
+             $0.addButtonProvider = { section in
+             return ButtonRow(){
+             $0.title = "Agregar Medicamento"
+             }
+             }
+             
+             
+             
+             
+             $0.multivaluedRowToInsertAt = { index in
+             
+             
+             return NameRow() {
+             $0.placeholder = "Nombre"
+             }
+             
+             }
+             
+             /*  $0 <<< NameRow() {
+             $0.title = "Enferdddd"
+             
+             }*/
+             
+             
+             }*/
+            
+            
+            +++ Section()
             <<< ButtonRow(){ (row: ButtonRow) -> Void in
                 row.title = "Crear Cuenta"
                 
-                    row.onCellSelection { [weak self] (cell, row) in
-                        print("Errores: \(String(describing: row.section?.form?.validate().count))")
-                        if row.section?.form?.validate().count == 0{
-                            self?.registrar()
-                        }
+                row.onCellSelection { [weak self] (cell, row) in
+                    print("Errores: \(String(describing: row.section?.form?.validate().count))")
+                    print(row.section?.form?.validate())
+                    if row.section?.form?.validate().count == 0{
+                        self?.registrar()
+                    }
                 }
         }
         
-                
+        
         
     }
     
@@ -291,7 +294,7 @@ class RegistroFormController: FormViewController {
         super.didReceiveMemoryWarning()
     }
     
-  
+    
     
     private func initialize() {
         /*let deleteButton = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteButtonPressed(_:)))*/
@@ -306,20 +309,20 @@ class RegistroFormController: FormViewController {
     }
     
     @objc func cancelButtonPressed(_ sender: Any) {
-       
-
+        
+        
     }
     @IBAction func cancelBtnPressed(_ sender: Any) {
         print("Cancel Button Pressed")
-       /* let loginView = UIViewController() as! LoginViewController
-        
-        self.navigationController?.popToViewController(loginView, animated: true)*/
+        /* let loginView = UIViewController() as! LoginViewController
+         
+         self.navigationController?.popToViewController(loginView, animated: true)*/
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let registroVC = storyBoard.instantiateViewController(withIdentifier: "login") as!
         LoginViewController
         
         present(registroVC, animated: true, completion: nil)
-     
+        
         
         
     }
@@ -340,14 +343,14 @@ class RegistroFormController: FormViewController {
         }
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-
+        
         let fechaNac = formatter.string(from: self.nacimiento)
         
         switch self.genero {
-            case "Masculino 👱": self.genero = "M"
-            case "Femenino 👩‍💼": self.genero = "F"
-            case "Otro 🌈": self.genero = "O"
-            default: print("default genero")
+        case "Masculino 👱": self.genero = "M"
+        case "Femenino 👩‍💼": self.genero = "F"
+        case "Otro 🌈": self.genero = "O"
+        default: print("default genero")
         }
         
         let headers = [
@@ -368,20 +371,24 @@ class RegistroFormController: FormViewController {
                 self.showMessage(text: "Parece que nuestro servidor no está respondiendo en este momento 😥" + "\n" + "Intente de nuevo más tarde.", caso: .noServidor)
                 return
             }
-
+            
+            
             if let json = response.result.value {
                 print("JSON: \(json)") // serialized json response
                 
-                let jsonDict = response.result.value as? [String:String]
-                if jsonDict!["status"]! == "alreadyExits" {
+                let h = response.result.value
+                
+                
+                let jsonDict = response.result.value as? [AnyHashable:Any]
+                if String(describing: jsonDict!["status"]!) == "alreadyExits" {
                     self.showMessage(text: "El email ya se encuentra en nuestros registros 😳, inicia sesión o recupera tu contraseña.", caso: .noServidor)
                     return
                 }
                 
-               
+                
                 self.showMessage(text: "Cuenta Creada 🙌", caso: .exito)
                 //self.performSegue(withIdentifier: "loginSeg", sender: self)
-
+                
                 
             } else {
                 self.showMessage(text: "Parece que nuestro servidor no está respondiendo en este momento 😥" + "\n" + "Intente de nuevo más tarde.", caso: .noServidor)
@@ -392,8 +399,8 @@ class RegistroFormController: FormViewController {
             
         }
         print("CREATED \(created)")
-     
-
+        
+        
     }
     
     
@@ -434,7 +441,7 @@ class RegistroFormController: FormViewController {
         self.dismiss(animated: true, completion: nil)
         
     }
-
+    
     
 }
 

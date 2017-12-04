@@ -12,6 +12,7 @@ import UIKit
 
 class ConnectivityHandler: NSObject, WCSessionDelegate {
     var session = WCSession.default()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     dynamic var messages = [String]()
     
@@ -43,6 +44,15 @@ class ConnectivityHandler: NSObject, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         NSLog("didReceiveMessage: %@", message)
+        
+        print("I'm : \(message["heartBeat"])")
+        if message["heartBeat"] != nil {
+            do {
+                try self.appDelegate.usuario.addHearthRate(rate: message["heartBeat"]! as! Double)
+            } catch {
+                print(error)
+            }
+        }
         
         
             replyHandler(["date" : "\(Date())"])

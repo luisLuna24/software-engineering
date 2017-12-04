@@ -12,8 +12,8 @@ import Alamofire
 import EventKit
 
 class NuevoMedicamentoFormViewController: FormViewController {
-    static let api: String = "http://localhost/xtechmx.tk/Proageing/API/new_medicine.php" //test
-    //static let api: String = "http://xtechmx.tk/Proageing/API/new_medicine.php" //funcional
+    //static let api: String = "http://localhost/xtechmx.tk/Proageing/API/new_medicine.php" //test
+    static let api: String = "http://xtechmx.tk/Proageing/API/new_medicine.php" //funcional
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
    
     var usuario: Usuario?

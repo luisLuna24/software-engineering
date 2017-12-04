@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import WatchConnectivity
+import HealthKit
+
 
 class ExtraViewController: UITableViewController {
-    //uber, calculadora de propinas, enviar ubicacion,
+
     
+    //uber, calculadora de propinas, enviar ubicacion,
+    let healthStore = HKHealthStore()
     var dataSource = ExtraDataSource()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -81,7 +86,16 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
         self.open(scheme: "uber://", appTitle: "Uber")
     } else if seleccion.title == "🗺 ¿Dónde estoy?" {
         self.open(scheme: "comgooglemaps://", appTitle: "Google Maps")
-    } else if seleccion.title == "🥇 Comparte ProAgeing" {
+    } else if seleccion.title == "❤️ Medir frecuencia cardiaca" {
+        
+        
+        self.startWatchApp()
+        
+        
+    }
+    
+
+    else if seleccion.title == "🥇 Comparte ProAgeing" {
         let textToShare = "ProAgeing es increible!  Te invito a conocer más sobre esta applicación!"
         
         if let myWebsite = NSURL(string: "http://xtechmx.tk/Proageing/") {
@@ -132,6 +146,42 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
         alertController.dismiss(animated: true, completion: nil)
         //self.dismiss(animated: true, completion: nil)
     }
+    
+    func startWatchApp() {
+        let wc: HKWorkoutConfiguration = HKWorkoutConfiguration()
+        wc.activityType = .walking
+        print("method called to open app ")
+        
+        getActiveWCSession { (wcSession) in
+            print(wcSession.isComplicationEnabled, wcSession.isPaired)
+            if wcSession.activationState == .activated && wcSession.isWatchAppInstalled {
+                print("starting watch app")
+                
+                self.healthStore.startWatchApp(with: wc, completion: { (success, error) in
+                    // Handle errors
+                })
+            }
+                
+            else{
+                print("watch not active or not installed")
+            }
+        }
+        
+    }
+    
+    func getActiveWCSession(completion: @escaping (WCSession)->Void) {
+        guard WCSession.isSupported() else { return }
+        
+        let wcSession = WCSession.default()
+       // wcSession.delegate = SaludTableViewController.type
+        
+        if wcSession.activationState == .activated {
+            completion(wcSession)
+        } else {
+            wcSession.activate()
+           // wcSessionActivationCompletion = completion
+        }
+    }
 }
 
 struct ExtraStuff {
@@ -168,6 +218,9 @@ struct ExtraDataSource {
                                     ExtraStuff(title: "🗺 ¿Dónde estoy?",
                                             description: "Toca aquí para dirigirte a Google Maps y mostrarte tus alrededores.",
                                             storyboardName: "Vision"),
+                                    ExtraStuff(title: "❤️ Medir frecuencia cardiaca",
+                                               description: "Si cuentas con un Apple Watch usa esta opción para conocer tu frecuencia cardiaca.",
+                                               storyboardName: ""),
                                     ExtraStuff(title: "⚙️ Ajustes",
                                             description: "Cambia y administra la forma en que accedemos a tu información.",
                                             storyboardName: "ARKit"),

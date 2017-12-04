@@ -17,6 +17,7 @@
 		7B2F14DF1F55D6090049BA57 /* ProAgeingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F14DE1F55D6090049BA57 /* ProAgeingTests.swift */; };
 		7B2F14EA1F55D6090049BA57 /* ProAgeingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F14E91F55D6090049BA57 /* ProAgeingUITests.swift */; };
 		7B30F23F1FA24C1C00A06469 /* Medicamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B30F23E1FA24C1C00A06469 /* Medicamento.swift */; };
+		7B322AFE1FC77E8A003D4546 /* NuevoRecordatorioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B322AFD1FC77E8A003D4546 /* NuevoRecordatorioViewController.swift */; };
 		7B35D57F1FB515DE0086EF09 /* Notificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B35D57E1FB515DE0086EF09 /* Notificator.swift */; };
 		7B49F37A1F7899F400D1B182 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49F3791F7899F400D1B182 /* HealthKit.framework */; };
 		7B49F37D1F789A1100D1B182 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49F37C1F789A1100D1B182 /* HealthKit.framework */; };
@@ -35,8 +36,6 @@
 		7BC128B31F5CBC4700235CA5 /* ExtraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC128B21F5CBC4700235CA5 /* ExtraViewController.swift */; };
 		7BC32EF71F606A4100571216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BC32EF61F606A4100571216 /* Assets.xcassets */; };
 		7BD3A82B1F6C801700875458 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD3A82A1F6C801700875458 /* ContactDetailViewController.swift */; };
-		7BDAB7691F62ECCF00F6F46C /* Salud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDAB7681F62ECCF00F6F46C /* Salud.swift */; };
-		7BDAB76B1F62ECFC00F6F46C /* Recordatorios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDAB76A1F62ECFC00F6F46C /* Recordatorios.swift */; };
 		7BECE05C1F72FECB008880BC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BECE04F1F72FE26008880BC /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		7BECE05D1F72FECB008880BC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BECE04F1F72FE26008880BC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7BEE10251F7AB5340027555E /* ConnectivityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEE10241F7AB5340027555E /* ConnectivityHandler.swift */; };
@@ -273,6 +272,7 @@
 		7B2F14E91F55D6090049BA57 /* ProAgeingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProAgeingUITests.swift; sourceTree = "<group>"; };
 		7B2F14EB1F55D6090049BA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B30F23E1FA24C1C00A06469 /* Medicamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicamento.swift; sourceTree = "<group>"; };
+		7B322AFD1FC77E8A003D4546 /* NuevoRecordatorioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuevoRecordatorioViewController.swift; sourceTree = "<group>"; };
 		7B35D57E1FB515DE0086EF09 /* Notificator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificator.swift; sourceTree = "<group>"; };
 		7B35D58F1FB517D60086EF09 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
 		7B35D5901FB517D60086EF09 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -290,15 +290,12 @@
 		7B89AF561F80BE2400E848E8 /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Eureka/Eureka.xcodeproj; sourceTree = "<group>"; };
 		7B96C2101F63650A003BCA78 /* Contacto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacto.swift; sourceTree = "<group>"; };
 		7B9F662D1FBB58D60088AE57 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		7BA1A2531F7430A6005B11C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7BAAD3191F72DC5900E61607 /* FavoritosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewController.swift; sourceTree = "<group>"; };
 		7BB8FB0A1F70B3F600E6C51F /* AllContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllContactsTableViewController.swift; sourceTree = "<group>"; };
 		7BC128AE1F5CBBED00235CA5 /* TelefonoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelefonoViewController.swift; sourceTree = "<group>"; };
 		7BC128B21F5CBC4700235CA5 /* ExtraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraViewController.swift; sourceTree = "<group>"; };
 		7BC32EF61F606A4100571216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BD3A82A1F6C801700875458 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
-		7BDAB7681F62ECCF00F6F46C /* Salud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salud.swift; sourceTree = "<group>"; };
-		7BDAB76A1F62ECFC00F6F46C /* Recordatorios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recordatorios.swift; sourceTree = "<group>"; };
 		7BECE0431F72FE26008880BC /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		7BEE10241F7AB5340027555E /* ConnectivityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityHandler.swift; sourceTree = "<group>"; };
 		7BF19F681F8478B800A81A8E /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
@@ -373,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				7B0CA1711FB93073005FF585 /* RecordatoriosTableViewController.swift */,
+				7B322AFD1FC77E8A003D4546 /* NuevoRecordatorioViewController.swift */,
 			);
 			path = Recordatorios;
 			sourceTree = "<group>";
@@ -423,7 +421,6 @@
 				7B2F14CD1F55D6090049BA57 /* Main.storyboard */,
 				7BC32EF61F606A4100571216 /* Assets.xcassets */,
 				7B2F14D21F55D6090049BA57 /* LaunchScreen.storyboard */,
-				7BA1A2531F7430A6005B11C3 /* GoogleService-Info.plist */,
 				7B2F14D51F55D6090049BA57 /* Info.plist */,
 			);
 			path = ProAgeing;
@@ -500,8 +497,6 @@
 			children = (
 				7B0156AC1F5FA88100F92CE7 /* Usuario.swift */,
 				7B30F23E1FA24C1C00A06469 /* Medicamento.swift */,
-				7BDAB7681F62ECCF00F6F46C /* Salud.swift */,
-				7BDAB76A1F62ECFC00F6F46C /* Recordatorios.swift */,
 				7B96C2101F63650A003BCA78 /* Contacto.swift */,
 				7B35D57E1FB515DE0086EF09 /* Notificator.swift */,
 			);
@@ -925,8 +920,7 @@
 				7B5B50FA1F9792A20077984C /* UserDetailsTableViewController.swift in Sources */,
 				7BC128AF1F5CBBED00235CA5 /* TelefonoViewController.swift in Sources */,
 				7B30F23F1FA24C1C00A06469 /* Medicamento.swift in Sources */,
-				7BDAB76B1F62ECFC00F6F46C /* Recordatorios.swift in Sources */,
-				7BDAB7691F62ECCF00F6F46C /* Salud.swift in Sources */,
+				7B322AFE1FC77E8A003D4546 /* NuevoRecordatorioViewController.swift in Sources */,
 				7B24A6C91FB0C74100D3E713 /* MedicamentosTableViewController.swift in Sources */,
 				7BEE10251F7AB5340027555E /* ConnectivityHandler.swift in Sources */,
 				7B8485DA1F785ADC0010E173 /* SaludTableViewController.swift in Sources */,
@@ -1200,7 +1194,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ProAgeingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xtech.ProAgeingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = ProAgeing.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProAgeing.app/ProAgeing";
@@ -1214,7 +1208,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ProAgeingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xtech.ProAgeingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = ProAgeing.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProAgeing.app/ProAgeing";
